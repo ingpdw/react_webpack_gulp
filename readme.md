@@ -1,4 +1,4 @@
-# react + webpack + gulp
+# React + webpack + gulp
 
 ### install
 * npm install
