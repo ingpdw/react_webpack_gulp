@@ -1,7 +1,7 @@
 'use strict';
 
 import React from "react";
-import Greeting from "./test";
+import Test from "./test";
 React.render(
-  <Greeting name="success" />,
+  <Test name="success" />,
   document.body);
