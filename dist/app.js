@@ -20465,7 +20465,7 @@
 	      { className: "test" },
 	      "test ",
 	      this.props.name,
-	      "!!!!!!"
+	      "!!!"
 	    );
 	  } });
 	module.exports = exports["default"];

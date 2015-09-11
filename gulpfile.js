@@ -27,27 +27,20 @@ gulp.task('webpack-dev-server', function() {
 
 //livereload
 var express = require('express'),
-    refresh = require('gulp-livereload'),
-    livereload = require('connect-livereload'),
-    livereloadport = 35729,
-    serverport = 5050;
+    livereloadport = 35729;
 
 gulp.task('server', function() {
 
   var server = express();
-  server.use(livereload({port: livereloadport}));
   server.use(express.static('./dist'));
   server.get('/', function(req, res) {
     res.sendfile('index.html', { root: 'dist' });
   });
 
   server.listen(serverport);
-  refresh.listen(livereloadport);
 
   gulp.watch(['app/scripts/*.js', 'app/scripts/**/*.js'],['webpack']);
   gulp.watch(['app/**/*.html' ], ['webpack']);
-  gulp.watch('./dist/**').on('change', refresh.changed);
 });
-
 
 gulp.task('default', ['webpack-dev-server']);
