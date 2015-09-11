@@ -12,8 +12,11 @@
   "devDependencies": {
     "babel-core": "^5.0.12",
     "babel-loader": "^5.0.0",
+    "connect-livereload": "^0.5.3",
+    "express": "^4.13.3",
     "file-loader": "^0.8.4",
     "gulp": "^3.9.0",
+    "gulp-livereload": "^3.8.0",
     "gulp-util": "^3.0.6",
     "install": "^0.1.8",
     "npm": "^2.14.2",
