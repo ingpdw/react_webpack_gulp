@@ -8,6 +8,7 @@ module.exports = {
     filename: 'app.js',
     path: __dirname + '/dist',
   },
+  //plugins: [new webpack.optimize.UglifyJsPlugin()],
   module: {
     loaders: [
       {test: /\.js$/, exclude: /node_modules/, loaders: ['react-hot', 'babel-loader']},

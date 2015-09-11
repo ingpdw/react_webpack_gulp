@@ -2,6 +2,7 @@
 
 ### install
 * npm install
+* npm install gulp -g
 
 ### run
 * gulp

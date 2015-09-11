@@ -6,34 +6,15 @@ var webpack = require( 'webpack' );
 var WebpackDevServer = require( 'webpack-dev-server' );
 var serverport = 5000;
 
-var config = {
-  context: __dirname + '/app',
-  entry: {
-    javascript: './scripts/app.js',
-    html: './index.html'
-  },
-  output: {
-    filename: 'app.js',
-    path: __dirname + '/dist',
-  },
-  plugins: [new webpack.optimize.UglifyJsPlugin()],
-  module: {
-    loaders: [
-      {test: /\.js$/, exclude: /node_modules/, loaders: ['react-hot', 'babel-loader']},
-      {test: /\.html$/, loader: 'file?name=[name].[ext]'}
-    ]
-  }
-};
-
 gulp.task( 'webpack', function(callback) {
-  webpack( config, function(err, stats) {
+  webpack( require('./webpack.config.js'), function(err, stats) {
       if(err) throw new gutil.PluginError('webpack', err);
   });
 });
 
 gulp.task('webpack-dev-server', function() {
     // Start a webpack-dev-server
-    var compiler = webpack( config );
+    var compiler = webpack( require('./webpack.config.js') );
 
     new WebpackDevServer(compiler, {
     }).listen( serverport, 'localhost', function(err) {
