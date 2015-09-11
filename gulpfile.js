@@ -26,11 +26,9 @@ gulp.task('webpack-dev-server', function() {
 });
 
 //livereload
-var express = require('express'),
-    livereloadport = 35729;
+var express = require('express');
 
 gulp.task('server', function() {
-
   var server = express();
   server.use(express.static('./dist'));
   server.get('/', function(req, res) {
