@@ -3,7 +3,7 @@ export default React.createClass({
   render: function() {
     return (
       <div className="test">
-        test {this.props.name}!!!
+        test {this.props.name}
 
       </div>
      );

@@ -1,3 +1,5 @@
+var webpack = require( 'webpack' );
+
 module.exports = {
   context: __dirname + '/app',
   entry: {
@@ -8,11 +10,25 @@ module.exports = {
     filename: 'app.js',
     path: __dirname + '/dist',
   },
-  //plugins: [new webpack.optimize.UglifyJsPlugin()],
+  resolve: {
+    extensions: [ '', '.js', '.jsx', '.json' ]
+  },
+  plugins: [new webpack.optimize.UglifyJsPlugin()],
   module: {
     loaders: [
-      {test: /\.js$/, exclude: /node_modules/, loaders: ['react-hot', 'babel-loader']},
-      {test: /\.html$/, loader: 'file?name=[name].[ext]'}
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loaders: ['babel-loader']
+      },
+      {
+        test: /\.jsx$/,
+        loaders: ['babel-loader']
+      },
+      {
+        test: /\.html$/,
+        loader: "file?name=[name].[ext]"
+      }
     ]
   }
 }

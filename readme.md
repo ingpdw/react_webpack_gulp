@@ -11,4 +11,4 @@
 ### gulp task
 * gulp webpack
 * gulp webpack-dev-server
-* gulp server
+* gulp server ( webpack-dev-server가 느리기 때문에 만들어 둠)
